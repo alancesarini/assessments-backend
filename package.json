@@ -1,0 +1,22 @@
+{
+  "name": "assesments-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js",
+    "dev": "env-cmd -f ./config/dev.env nodemon ./index.js"
+  },
+  "author": "Alan Cesarini",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "env-cmd": "^9.0.3",
+    "express": "^4.17.1",
+    "mongodb": "^3.3.3",
+    "mongoose": "^5.7.8"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.4"
+  }
+}
