@@ -125,6 +125,8 @@ router.post(
 // Add a test
 router.post('/tests', async (req, res) => {
 	const test = new Test({
+		title: req.body.title,
+		instructions: req.body.instructions,
 		questions: [],
 	});
 
