@@ -147,6 +147,7 @@ router.post('/tests/full', async (req, res) => {
 			startTime: null,
 			endTime: null,
 		};
+		return question;
 	});
 
 	const test = new Test({
