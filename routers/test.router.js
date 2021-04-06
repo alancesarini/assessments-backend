@@ -47,6 +47,7 @@ router.get('/tests/:testid/current', async (req, res) => {
 			questionText: test.questions[questionIndex].questionText,
 			imageUrl: test.questions[questionIndex].imageUrl,
 			maxTime: test.questions[questionIndex].maxTime,
+			pasteAllowed: test.questions[questionIndex].pasteAllowed,
 		});
 	} catch (e) {
 		res.status(400).send();
@@ -73,6 +74,7 @@ router.get('/tests/:testid/questions/:questionindex', async (req, res) => {
 			questionText: test.questions[questionIndex].questionText,
 			imageUrl: test.questions[questionIndex].imageUrl,
 			maxTime: test.questions[questionIndex].maxTime,
+			pasteAllowed: test.questions[questionIndex].pasteAllowed,
 		});
 	} catch (e) {
 		res.status(400).send();

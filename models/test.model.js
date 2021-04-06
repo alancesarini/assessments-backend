@@ -22,6 +22,7 @@ const questionSchema = mongoose.Schema({
 		type: Number,
 		default: 0,
 	},
+	pasteAllowed: Boolean,
 	answer: answerSchema,
 });
 
