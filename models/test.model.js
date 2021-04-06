@@ -17,6 +17,7 @@ const questionSchema = mongoose.Schema({
 		type: String,
 		trim: true,
 	},
+	imageUrl: String,
 	maxTime: {
 		type: Number,
 		default: 0,
