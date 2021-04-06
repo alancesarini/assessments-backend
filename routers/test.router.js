@@ -139,6 +139,23 @@ router.post('/tests', async (req, res) => {
 	}
 });
 
+// Add a test with all questions
+router.post('/tests/full', async (req, res) => {
+	const test = new Test({
+		title: req.body.title,
+		instructions: req.body.instructions,
+		questions: req.body.questions,
+	});
+
+	try {
+		await test.save();
+		res.status(200).send(test);
+	} catch (e) {
+		console.log(e);
+		res.status(400).send();
+	}
+});
+
 // Add a question to a test
 router.post('/tests/:testid/questions', async (req, res) => {
 	const test = await findTestOrDie(req, res);
