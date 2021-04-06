@@ -141,10 +141,18 @@ router.post('/tests', async (req, res) => {
 
 // Add a test with all questions
 router.post('/tests/full', async (req, res) => {
+	const questions = req.body.questions.map((question) => {
+		question.answer = {
+			text: '',
+			startTime: null,
+			endTime: null,
+		};
+	});
+
 	const test = new Test({
 		title: req.body.title,
 		instructions: req.body.instructions,
-		questions: req.body.questions,
+		questions: questions,
 	});
 
 	try {
