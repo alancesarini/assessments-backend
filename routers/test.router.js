@@ -189,10 +189,14 @@ router.get('/tests/:testid/results', async (req, res) => {
 
 // Get a test from query params. If the test doesn't exist, die with a 404
 const findTestOrDie = async (req, res) => {
-	const objectId = new mongoose.Types.ObjectId(req.params.testid);
-	const test = await Test.findById(objectId);
-	if (!test) {
-		res.status(404).send();
+	try {
+		const objectId = new mongoose.Types.ObjectId(req.params.testid);
+		const test = await Test.findById(objectId);
+		if (!test) {
+			res.status(404).send();
+		}
+	} catch (e) {
+		res.status(400).send(e);
 	}
 
 	return test;
