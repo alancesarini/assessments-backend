@@ -183,8 +183,8 @@ router.post('/tests/:testid/questions', async (req, res) => {
 
 // Get the test results
 router.get('/tests/:testid/results', async (req, res) => {
-	// const test = await findTestOrDie(req, res);
-	res.status(200).send('this is a test for the test!');
+	const test = await findTestOrDie(req, res);
+	res.status(200).send(test);
 });
 
 // Get a test from query params. If the test doesn't exist, die with a 404
